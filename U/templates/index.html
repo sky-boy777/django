@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>主页</h1>
+{% if request.user.is_authenticated %}
+    <p>欢迎---{{ request.user.username }}---<a href="{% url 'user:logout' %}">退出登录</a>-----<a href="{% url 'user:change_password' %}">修改密码</a></p>
+{% else %}
+    <a href="{% url 'user:login' %}">去登录</a>
+{% endif %}
+
+
+<h1>装饰器缓存1秒{{ my_time1 }}</h1>
+
+局部缓存2秒
+{% load cache %}
+{% cache 2 'my' %}
+     <h2>{{ my_time2 }}</h2>
+{% endcache %}
+</body>
+</html>

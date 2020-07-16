@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证码</title>
+</head>
+<body>
+<h1>验证码</h1>
+<form action="{% url 'app:cap' %}" method="post">
+    {% csrf_token %}
+    {{ form.captcha }}
+    <input type="submit">
+
+</form>
+
+
+</body>
+</html>

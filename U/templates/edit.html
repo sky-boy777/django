@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="/static/tinymce/tinymce.min.js"></script>
+    <script>
+         tinymce.init({
+            'mode':'textareas',
+            'width':'300',
+            'height':'600',
+        });
+    </script>
+    <title>富文本框</title>
+</head>
+<body>
+<h1>富文本框</h1>
+<form action="{% url 'user:edit' %}" method="post">
+    {% csrf_token %}
+    <textarea name="content"></textarea><br>
+    <input type="submit">
+</form>
+</body>
+</html>
