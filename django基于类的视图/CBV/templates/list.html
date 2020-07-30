@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>ListView视图，循环的对象必须是object_list</h1>
+{% for i in object_list %}
+<p><span>{{ i.id }}-------</span></span><span>{{ i.text }}</span></p>
+    <hr>
+{% endfor %}
+<h2>分页{% for page in paginator.page_range %}</h2>
+    <a href="">{{ page }}</a>
+{% endfor %}
+
+</body>
+</html>

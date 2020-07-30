@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<h1>前后端分离</h1>
+<h3>1、浏览器请求静态文件目录:127.0.0.1:8000/static/info.html</h3>
+<h3>2、Ajax请求:$.get("/info/", function(data){回调函数代码}</h3>
+<h3>3、Ajax回调函数渲染HTML页面</h3>
+<div id="d">
+
+</div>
+</body>
+
+<script>
+    <!-- jquery发送ajax请求：$.get(后端地址，回调函数) -->
+    $.get("/info/", function(data){
+        console.log(data)
+        for (i in data){
+            $("#d").append("<p>"+ data[i].text +"</p>");
+        }
+    })
+</script>
+</html>
